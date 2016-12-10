@@ -5,7 +5,6 @@ class MessagesController < ApplicationController
 	def new
 		@message = Message.new
 		@users = User.all
-		@users.delete(current_user)
 	end
 
 	def index
