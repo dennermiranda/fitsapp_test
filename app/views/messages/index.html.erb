@@ -13,7 +13,8 @@
   <tbody>
     <% @sent_messages.each do |sent| %>
       <tr>
-        <td><%= sent.question %></td>
+        <td><%= sent.title %></td>
+        <td><%= link_to 'Show', sent%></td>
       </tr>
     <% end %>
   </tbody>
@@ -21,4 +22,26 @@
 
 <br>
 
-<%= link_to 'New Message', newmessage_path %>
+<h1>Received messages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @received_messages.each do |received| %>
+      <tr>
+        <td><%= received.title %></td>
+        <td><%= link_to 'Show', received%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', newmessage_path, class: "btn btn-lg btn-primary" %>
